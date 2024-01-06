@@ -1,10 +1,19 @@
 import './Button.module.css';
 import {ButtonProps} from './Button.props.ts';
+import cn from 'classnames';
+import {FC} from 'react';
 
-function Button({children, ...props}: ButtonProps) {
+// Alternative create component type
+export const ButtonAlt: FC<ButtonProps> = ({children, className, ...props}) => {
 
     return (
-        <button className='button accent'{...props}>{children}</button>
+        <button className={cn('button accent', className)} {...props}>{children}</button>
+    );
+}
+function Button({children, className, ...props}: ButtonProps) {
+
+    return (
+        <button className={cn('button accent', className)} {...props}>{children}</button>
     );
 }
 
