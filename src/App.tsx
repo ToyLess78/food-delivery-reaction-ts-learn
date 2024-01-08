@@ -1,5 +1,6 @@
 import Button from './components/Button/Button.tsx';
 import {useState, MouseEvent} from 'react';
+import Input from './components/Input/Input.tsx';
 
 function App() {
 
@@ -11,6 +12,8 @@ function App() {
 	return (
 		<>
 			<Button onClick={addCounter}>Button</Button>
+			<Button appearance='big' onClick={addCounter}>Button</Button>
+			<Input placeholder='Email'/>
 		</>
 	);
 }

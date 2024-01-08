@@ -11,10 +11,13 @@ export const ButtonAlt: FC<ButtonProps> = ({children, className, ...props}) => {
 	);
 };
 
-function Button({children, className, ...props}: ButtonProps) {
+function Button({children, className, appearance = 'small', ...props}: ButtonProps) {
 
 	return (
-		<button className={cn(styles['button'], styles['accent'], className)} {...props}>{children}</button>
+		<button className={cn(styles['button'], styles['accent'], className, {
+			[styles['small']]: appearance === 'small',
+			[styles['big']]: appearance === 'big'
+		})} {...props}>{children}</button>
 	);
 }
 
